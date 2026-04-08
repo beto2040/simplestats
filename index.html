@@ -1,213 +1,241 @@
 <<!DOCTYPE html>
-<html lang="es" class="">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Pro | SimpleStats</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Librería para exportar imagen -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-        }
-    </script>
-    <style>
-        .transition-all { transition: all 0.3s ease; }
-    </style>
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-all">
+    <html lang="es" class="">
 
-    <header class="bg-blue-600 dark:bg-blue-800 text-white p-4 shadow-md">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold">SimpleStats Web Pro</h1>
-                <p class="text-sm">Calculadora Avanzada de Rentabilidad</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Pro | SimpleStats</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Librería para exportar imagen -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291388562239813"
+            crossorigin="anonymous"></script>
+
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+            }
+        </script>
+        <style>
+            .transition-all {
+                transition: all 0.3s ease;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-all">
+
+        <header class="bg-blue-600 dark:bg-blue-800 text-white p-4 shadow-md">
+            <div class="max-w-5xl mx-auto flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">SimpleStats Web Pro</h1>
+                    <p class="text-sm">Calculadora Avanzada de Rentabilidad</p>
+                </div>
+                <button onclick="toggleDarkMode()"
+                    class="p-2 bg-blue-700 dark:bg-gray-700 rounded-full hover:bg-blue-500 transition-colors">
+                    <span id="darkIcon">🌙 Modo Oscuro</span>
+                </button>
             </div>
-            <button onclick="toggleDarkMode()" class="p-2 bg-blue-700 dark:bg-gray-700 rounded-full hover:bg-blue-500 transition-colors">
-                <span id="darkIcon">🌙 Modo Oscuro</span>
-            </button>
-        </div>
-    </header>
+        </header>
 
-    <main class="max-w-5xl mx-auto mt-8 p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Columna Principal -->
-        <div class="md:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold mb-4 border-b pb-2">Configuración de Cálculo</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <!-- Costo -->
-                <div>
-                    <label class="block text-sm font-medium">Costo del Producto</label>
-                    <div class="mt-1 relative rounded-md shadow-sm">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">$</div>
-                        <input type="number" id="costPrice" onkeypress="handleEnter(event)" class="pl-7 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="0.00">
-                    </div>
-                </div>
+        <main class="max-w-5xl mx-auto mt-8 p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <!-- Venta -->
-                <div>
-                    <label class="block text-sm font-medium">Precio de Venta</label>
-                    <div class="mt-1 relative rounded-md shadow-sm">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">$</div>
-                        <input type="number" id="sellPrice" onkeypress="handleEnter(event)" class="pl-7 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="0.00">
-                    </div>
-                </div>
+            <!-- Columna Principal -->
+            <div
+                class="md:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                <h2 class="text-xl font-semibold mb-4 border-b pb-2">Configuración de Cálculo</h2>
 
-                <!-- Impuestos -->
-                <div class="sm:col-span-2 flex items-center gap-4 bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Costo -->
                     <div>
-                        <label class="block text-sm font-medium">Impuesto/IVA (%)</label>
-                        <input type="number" id="taxRate" value="0" onkeypress="handleEnter(event)" class="mt-1 block w-24 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500">
+                        <label class="block text-sm font-medium">Costo del Producto</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                $</div>
+                            <input type="number" id="costPrice" onkeypress="handleEnter(event)"
+                                class="pl-7 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="0.00">
+                        </div>
                     </div>
-                    <div class="flex items-center mt-6">
-                        <input id="applyTax" type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                        <label for="applyTax" class="ml-2 text-sm font-medium">Restar impuesto de la ganancia</label>
+
+                    <!-- Venta -->
+                    <div>
+                        <label class="block text-sm font-medium">Precio de Venta</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                $</div>
+                            <input type="number" id="sellPrice" onkeypress="handleEnter(event)"
+                                class="pl-7 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="0.00">
+                        </div>
                     </div>
+
+                    <!-- Impuestos -->
+                    <div class="sm:col-span-2 flex items-center gap-4 bg-gray-50 dark:bg-gray-700/50 p-3 rounded-lg">
+                        <div>
+                            <label class="block text-sm font-medium">Impuesto/IVA (%)</label>
+                            <input type="number" id="taxRate" value="0" onkeypress="handleEnter(event)"
+                                class="mt-1 block w-24 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 border p-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="flex items-center mt-6">
+                            <input id="applyTax" type="checkbox"
+                                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label for="applyTax" class="ml-2 text-sm font-medium">Restar impuesto de la
+                                ganancia</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2 mt-6">
+                    <button onclick="calcularMargen()"
+                        class="flex-1 bg-blue-600 text-white font-bold py-3 px-4 rounded hover:bg-blue-700 transition duration-200">
+                        Calcular Ganancia
+                    </button>
+                    <button onclick="limpiarCampos()"
+                        class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-3 px-6 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-200">
+                        Limpiar
+                    </button>
+                </div>
+
+                <!-- Panel de Resultados -->
+                <div id="resultsPanel" class="hidden mt-8 p-6 rounded-lg border transition-all duration-500">
+                    <div id="exportArea">
+                        <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Reporte de Rentabilidad</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-sm opacity-80 uppercase font-semibold">Ganancia Neta</p>
+                                <span id="netProfit" class="text-3xl font-black">--</span>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-80 uppercase font-semibold">Margen de Ganancia</p>
+                                <span id="margin" class="text-3xl font-black">--</span>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-80 uppercase font-semibold">ROI (Retorno)</p>
+                                <span id="roi" class="text-3xl font-black">--</span>
+                            </div>
+                            <div id="taxResultRow" class="hidden">
+                                <p class="text-sm opacity-80 uppercase font-semibold">Impuestos (IVA)</p>
+                                <span id="taxAmount" class="text-3xl font-black text-orange-500">--</span>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-[10px] text-gray-400">Generado por SimpleStats Web - <span
+                                id="currentDate"></span></p>
+                    </div>
+
+                    <button onclick="exportarImagen()"
+                        class="mt-6 text-sm text-blue-600 dark:text-blue-400 underline hover:text-blue-800">
+                        📸 Guardar resultado como imagen
+                    </button>
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-2 mt-6">
-                <button onclick="calcularMargen()" class="flex-1 bg-blue-600 text-white font-bold py-3 px-4 rounded hover:bg-blue-700 transition duration-200">
-                    Calcular Ganancia
-                </button>
-                <button onclick="limpiarCampos()" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-3 px-6 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-200">
-                    Limpiar
-                </button>
-            </div>
-
-            <!-- Panel de Resultados -->
-            <div id="resultsPanel" class="hidden mt-8 p-6 rounded-lg border transition-all duration-500">
-                <div id="exportArea">
-                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Reporte de Rentabilidad</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <p class="text-sm opacity-80 uppercase font-semibold">Ganancia Neta</p>
-                            <span id="netProfit" class="text-3xl font-black">--</span>
-                        </div>
-                        <div>
-                            <p class="text-sm opacity-80 uppercase font-semibold">Margen de Ganancia</p>
-                            <span id="margin" class="text-3xl font-black">--</span>
-                        </div>
-                        <div>
-                            <p class="text-sm opacity-80 uppercase font-semibold">ROI (Retorno)</p>
-                            <span id="roi" class="text-3xl font-black">--</span>
-                        </div>
-                        <div id="taxResultRow" class="hidden">
-                            <p class="text-sm opacity-80 uppercase font-semibold">Impuestos (IVA)</p>
-                            <span id="taxAmount" class="text-3xl font-black text-orange-500">--</span>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-[10px] text-gray-400">Generado por SimpleStats Web - <span id="currentDate"></span></p>
+            <!-- Sidebar / Ads -->
+            <div class="hidden md:flex flex-col gap-4">
+                <div
+                    class="w-full h-[600px] bg-gray-100 dark:bg-gray-800 border border-dashed border-gray-400 dark:border-gray-600 flex flex-col items-center justify-center text-gray-500 text-sm text-center px-4 rounded-lg">
+                    <p>[Espacio AdSense: 300x600]</p>
                 </div>
-                
-                <button onclick="exportarImagen()" class="mt-6 text-sm text-blue-600 dark:text-blue-400 underline hover:text-blue-800">
-                    📸 Guardar resultado como imagen
-                </button>
             </div>
-        </div>
 
-        <!-- Sidebar / Ads -->
-        <div class="hidden md:flex flex-col gap-4">
-            <div class="w-full h-[600px] bg-gray-100 dark:bg-gray-800 border border-dashed border-gray-400 dark:border-gray-600 flex flex-col items-center justify-center text-gray-500 text-sm text-center px-4 rounded-lg">
-                <p>[Espacio AdSense: 300x600]</p>
-            </div>
-        </div>
+        </main>
 
-    </main>
-
-    <script>
-        // 1. Soporte para Tecla Enter
-        function handleEnter(event) {
-            if (event.key === "Enter") {
-                calcularMargen();
-            }
-        }
-
-        // 2. Función Principal de Cálculo
-        function calcularMargen() {
-            const cost = parseFloat(document.getElementById('costPrice').value);
-            const sell = parseFloat(document.getElementById('sellPrice').value);
-            const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
-            const applyTax = document.getElementById('applyTax').checked;
-
-            if (isNaN(cost) || isNaN(sell) || cost < 0 || sell <= 0) {
-                alert("Por favor, ingresa precios válidos.");
-                return;
+        <script>
+            // 1. Soporte para Tecla Enter
+            function handleEnter(event) {
+                if (event.key === "Enter") {
+                    calcularMargen();
+                }
             }
 
-            // Cálculos
-            let taxAmount = 0;
-            if (applyTax) {
-                taxAmount = (sell * (taxRate / 100));
+            // 2. Función Principal de Cálculo
+            function calcularMargen() {
+                const cost = parseFloat(document.getElementById('costPrice').value);
+                const sell = parseFloat(document.getElementById('sellPrice').value);
+                const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+                const applyTax = document.getElementById('applyTax').checked;
+
+                if (isNaN(cost) || isNaN(sell) || cost < 0 || sell <= 0) {
+                    alert("Por favor, ingresa precios válidos.");
+                    return;
+                }
+
+                // Cálculos
+                let taxAmount = 0;
+                if (applyTax) {
+                    taxAmount = (sell * (taxRate / 100));
+                }
+
+                const profit = sell - cost - taxAmount;
+                const margin = (profit / sell) * 100;
+                const roi = (profit / cost) * 100;
+
+                // 3. Inyectar Resultados
+                document.getElementById('netProfit').innerText = "$" + profit.toFixed(2);
+                document.getElementById('margin').innerText = margin.toFixed(2) + "%";
+                document.getElementById('roi').innerText = roi.toFixed(2) + "%";
+
+                // Mostrar impuestos si aplica
+                if (applyTax && taxRate > 0) {
+                    document.getElementById('taxResultRow').classList.remove('hidden');
+                    document.getElementById('taxAmount').innerText = "$" + taxAmount.toFixed(2);
+                } else {
+                    document.getElementById('taxResultRow').classList.add('hidden');
+                }
+
+                // 4. Validaciones Visuales (Rojo/Verde)
+                const panel = document.getElementById('resultsPanel');
+                const indicators = [document.getElementById('netProfit'), document.getElementById('margin'), document.getElementById('roi')];
+
+                panel.classList.remove('hidden');
+                document.getElementById('currentDate').innerText = new Date().toLocaleString();
+
+                if (profit < 0) {
+                    panel.className = "mt-8 p-6 rounded-lg border transition-all bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800";
+                    indicators.forEach(el => el.className = "text-3xl font-black text-red-600 dark:text-red-400");
+                } else {
+                    panel.className = "mt-8 p-6 rounded-lg border transition-all bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800";
+                    indicators.forEach(el => el.className = "text-3xl font-black text-green-600 dark:text-green-400");
+                }
             }
 
-            const profit = sell - cost - taxAmount;
-            const margin = (profit / sell) * 100;
-            const roi = (profit / cost) * 100;
-
-            // 3. Inyectar Resultados
-            document.getElementById('netProfit').innerText = "$" + profit.toFixed(2);
-            document.getElementById('margin').innerText = margin.toFixed(2) + "%";
-            document.getElementById('roi').innerText = roi.toFixed(2) + "%";
-            
-            // Mostrar impuestos si aplica
-            if (applyTax && taxRate > 0) {
-                document.getElementById('taxResultRow').classList.remove('hidden');
-                document.getElementById('taxAmount').innerText = "$" + taxAmount.toFixed(2);
-            } else {
-                document.getElementById('taxResultRow').classList.add('hidden');
+            // 5. Botón de Limpiar
+            function limpiarCampos() {
+                document.getElementById('costPrice').value = "";
+                document.getElementById('sellPrice').value = "";
+                document.getElementById('taxRate').value = "0";
+                document.getElementById('applyTax').checked = false;
+                document.getElementById('resultsPanel').classList.add('hidden');
             }
 
-            // 4. Validaciones Visuales (Rojo/Verde)
-            const panel = document.getElementById('resultsPanel');
-            const indicators = [document.getElementById('netProfit'), document.getElementById('margin'), document.getElementById('roi')];
-            
-            panel.classList.remove('hidden');
-            document.getElementById('currentDate').innerText = new Date().toLocaleString();
-
-            if (profit < 0) {
-                panel.className = "mt-8 p-6 rounded-lg border transition-all bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800";
-                indicators.forEach(el => el.className = "text-3xl font-black text-red-600 dark:text-red-400");
-            } else {
-                panel.className = "mt-8 p-6 rounded-lg border transition-all bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800";
-                indicators.forEach(el => el.className = "text-3xl font-black text-green-600 dark:text-green-400");
+            // 6. Modo Oscuro
+            function toggleDarkMode() {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                document.getElementById('darkIcon').innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
             }
-        }
 
-        // 5. Botón de Limpiar
-        function limpiarCampos() {
-            document.getElementById('costPrice').value = "";
-            document.getElementById('sellPrice').value = "";
-            document.getElementById('taxRate').value = "0";
-            document.getElementById('applyTax').checked = false;
-            document.getElementById('resultsPanel').classList.add('hidden');
-        }
+            // 7. Exportar a Imagen
+            function exportarImagen() {
+                const element = document.getElementById('exportArea');
+                // Aplicamos un padding temporal para la captura
+                element.classList.add('p-4', 'bg-white', 'dark:bg-gray-800');
 
-        // 6. Modo Oscuro
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            const isDark = document.documentElement.classList.contains('dark');
-            document.getElementById('darkIcon').innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Oscuro";
-        }
+                html2canvas(element, {
+                    backgroundColor: document.documentElement.classList.contains('dark') ? '#111827' : '#FFFFFF'
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'resultado-ganancia.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                    element.classList.remove('p-4');
+                });
+            }
+        </script>
+    </body>
 
-        // 7. Exportar a Imagen
-        function exportarImagen() {
-            const element = document.getElementById('exportArea');
-            // Aplicamos un padding temporal para la captura
-            element.classList.add('p-4', 'bg-white', 'dark:bg-gray-800');
-            
-            html2canvas(element, {
-                backgroundColor: document.documentElement.classList.contains('dark') ? '#111827' : '#FFFFFF'
-            }).then(canvas => {
-                const link = document.createElement('a');
-                link.download = 'resultado-ganancia.png';
-                link.href = canvas.toDataURL();
-                link.click();
-                element.classList.remove('p-4');
-            });
-        }
-    </script>
-</body>
-</html>
+    </html>
