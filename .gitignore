@@ -1,0 +1,5 @@
+# Ignora todos los archivos de texto
+*.txt
+
+# Ignora esta carpeta 
+codigo_borradores/
