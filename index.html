@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleStats AI | Consultor Financiero Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-129138856239813" crossorigin="anonymous"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-129138856239813"
+        crossorigin="anonymous"></script>
 
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -18,62 +20,85 @@
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
         }
-        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-all">
 
     <header class="bg-indigo-700 text-white p-4 shadow-lg border-b-4 border-indigo-900">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-black tracking-tighter">SIMPLESTATS <span class="bg-yellow-400 text-indigo-900 px-2 py-1 rounded">AI</span></h1>
+                <h1 class="text-2xl font-black tracking-tighter">SIMPLESTATS <span
+                        class="bg-yellow-400 text-indigo-900 px-2 py-1 rounded">AI</span></h1>
                 <p class="text-xs font-bold opacity-80 uppercase">Inteligencia de Negocios para Emprendedores</p>
             </div>
-            <button onclick="document.documentElement.classList.toggle('dark')" class="text-sm bg-indigo-800 px-3 py-1 rounded-full border border-indigo-400 hover:bg-indigo-600 transition">🌙 Modo</button>
+            <button onclick="document.documentElement.classList.toggle('dark')"
+                class="text-sm bg-indigo-800 px-3 py-1 rounded-full border border-indigo-400 hover:bg-indigo-600 transition">🌙
+                Modo</button>
         </div>
     </header>
 
     <main class="max-w-5xl mx-auto mt-6 p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         <div class="lg:col-span-2 space-y-6">
-            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700">
+            <div
+                class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700">
                 <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
                     <span class="bg-indigo-100 dark:bg-indigo-900 p-2 rounded">📊</span> Configuración de Costos
                 </h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-bold mb-1">Costo Unitario (Compra)</label>
                         <div class="relative">
                             <span class="absolute left-3 top-2 text-slate-400">$</span>
-                            <input type="number" id="costPrice" class="w-full pl-8 p-2 border rounded-lg dark:bg-slate-700 dark:border-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="0.00">
+                            <input type="number" id="costPrice"
+                                class="w-full pl-8 p-2 border rounded-lg dark:bg-slate-700 dark:border-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                placeholder="0.00">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-bold mb-1">Precio de Venta al Cliente</label>
                         <div class="relative">
                             <span class="absolute left-3 top-2 text-slate-400">$</span>
-                            <input type="number" id="sellPrice" class="w-full pl-8 p-2 border rounded-lg dark:bg-slate-700 dark:border-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="0.00">
+                            <input type="number" id="sellPrice"
+                                class="w-full pl-8 p-2 border rounded-lg dark:bg-slate-700 dark:border-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                placeholder="0.00">
                         </div>
                     </div>
-                    <div class="md:col-span-2 bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
+                    <div
+                        class="md:col-span-2 bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg flex items-center justify-between">
                         <div>
                             <label class="block text-sm font-bold">Impuesto / IVA (%)</label>
-                            <input type="number" id="taxRate" value="16" class="w-20 p-2 border rounded dark:bg-slate-800 outline-none">
+                            <input type="number" id="taxRate" value="16"
+                                class="w-20 p-2 border rounded dark:bg-slate-800 outline-none">
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="checkbox" id="applyTax" class="w-5 h-5 accent-indigo-600" checked>
-                            <label for="applyTax" class="text-sm font-bold cursor-pointer">Descontar impuestos del margen</label>
+                            <label for="applyTax" class="text-sm font-bold cursor-pointer">Descontar impuestos del
+                                margen</label>
                         </div>
                     </div>
                 </div>
 
-                <button onclick="ejecutarTodo()" class="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 rounded-xl shadow-lg transform active:scale-95 transition-all uppercase tracking-widest text-lg">
+                <button onclick="ejecutarTodo()"
+                    class="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 rounded-xl shadow-lg transform active:scale-95 transition-all uppercase tracking-widest text-lg">
                     Calcular y Diagnosticar con IA
                 </button>
             </div>
 
-            <div id="resultsCard" class="hidden bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border-l-8 border-indigo-500 animate-fade-in">
+            <div id="resultsCard"
+                class="hidden bg-white dark:bg-slate-800 p-6 rounded-xl shadow-xl border-l-8 border-indigo-500 animate-fade-in">
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
                     <div>
                         <p class="text-xs font-bold text-slate-400 uppercase">Ganancia Neta</p>
@@ -90,7 +115,8 @@
                 </div>
             </div>
 
-            <div id="aiAdviceCard" class="hidden bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800">
+            <div id="aiAdviceCard"
+                class="hidden bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800">
                 <h3 class="font-black text-indigo-700 dark:text-indigo-400 mb-3 flex items-center gap-2">
                     🧠 DIAGNÓSTICO ESTRATÉGICO IA:
                 </h3>
@@ -101,20 +127,27 @@
         </div>
 
         <div class="space-y-6">
-            <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 p-5 rounded-xl border-2 border-dashed border-orange-200 dark:border-slate-600">
-                <p class="text-[10px] font-bold text-orange-600 mb-2 uppercase tracking-widest text-center">Recomendación Pro</p>
+            <div
+                class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 p-5 rounded-xl border-2 border-dashed border-orange-200 dark:border-slate-600">
+                <p class="text-[10px] font-bold text-orange-600 mb-2 uppercase tracking-widest text-center">
+                    Recomendación Pro</p>
                 <h4 class="font-bold text-sm mb-2 text-center">¿Necesitas capital para crecer?</h4>
-                <p class="text-xs text-slate-500 mb-4 text-center">Obtén una tarjeta de crédito para tu negocio sin anualidad.</p>
-                <a href="#" class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 rounded font-bold text-xs transition">Ver Opciones (Afiliado)</a>
+                <p class="text-xs text-slate-500 mb-4 text-center">Obtén una tarjeta de crédito para tu negocio sin
+                    anualidad.</p>
+                <a href="#"
+                    class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 rounded font-bold text-xs transition">Ver
+                    Opciones (Afiliado)</a>
             </div>
 
-            <div class="bg-slate-200 dark:bg-slate-700 h-64 rounded-xl flex items-center justify-center border border-slate-300">
+            <div
+                class="bg-slate-200 dark:bg-slate-700 h-64 rounded-xl flex items-center justify-center border border-slate-300">
                 <span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Espacio Publicitario</span>
             </div>
 
             <div class="p-4 bg-green-50 dark:bg-green-900/10 rounded-lg border border-green-100 dark:border-green-900">
                 <p class="text-[10px] text-green-700 dark:text-green-400 text-center leading-tight">
-                    🔒 <strong>Seguridad Pro:</strong> Tus datos financieros viajan cifrados. El análisis se genera mediante inteligencia artificial segura.
+                    🔒 <strong>Seguridad Pro:</strong> Tus datos financieros viajan cifrados. El análisis se genera
+                    mediante inteligencia artificial segura.
                 </p>
             </div>
         </div>
@@ -138,7 +171,7 @@
             document.getElementById('resProfit').innerText = "$" + profit.toFixed(2);
             document.getElementById('resMargin').innerText = margin.toFixed(2) + "%";
             document.getElementById('resROI').innerText = roi.toFixed(2) + "%";
-            
+
             document.getElementById('resultsCard').classList.remove('hidden');
             document.getElementById('aiAdviceCard').classList.remove('hidden');
 
@@ -151,7 +184,6 @@
             Dame un consejo de 3 líneas máximo sobre cómo mejorar la rentabilidad. Sé directo, rudo si es necesario y muy estratégico. Habla de tú.`;
 
             try {
-                // Aquí llamamos a la carpeta /functions que Cloudflare maneja en el servidor
                 const response = await fetch('/api/gemini', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -159,18 +191,26 @@
                         contents: [{ parts: [{ text: promptText }] }]
                     })
                 });
-                
-                const data = await response.json();
-                
-                if (data.error) throw new Error(data.error);
 
-                const advice = data.candidates[0].content.parts[0].text;
-                aiTextElement.innerHTML = `"${advice}"`;
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error.message || "Error en la API de Google");
+                }
+
+                if (data.candidates && data.candidates[0].content.parts[0].text) {
+                    const advice = data.candidates[0].content.parts[0].text;
+                    aiTextElement.innerHTML = `"${advice}"`;
+                } else {
+                    throw new Error("Respuesta de IA vacía");
+                }
+
             } catch (error) {
                 console.error("Error IA:", error);
-                aiTextElement.innerHTML = "El asesor está en una reunión privada. Intenta de nuevo en un momento.";
+                aiTextElement.innerHTML = `⚠️ <strong>Error:</strong> ${error.message}. <br>Verifica que tu API KEY sea válida en Google AI Studio.`;
             }
-        }
+        } // <--- ESTA LLAVE FALTABA PARA CERRAR LA FUNCIÓN ejecutarTodo
     </script>
 </body>
+
 </html>
