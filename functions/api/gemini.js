@@ -10,8 +10,8 @@ export async function onRequest(context) {
   try {
     const body = await context.request.json();
     
-    // Hacemos la petición desde el servidor de Cloudflare a Google
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
+    // CAMBIO IMPORTANTE: Usamos 'gemini-1.5-flash-latest' para evitar el error 404
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
@@ -19,7 +19,9 @@ export async function onRequest(context) {
 
     const data = await response.json();
     
+    // Pasamos el status real de Google para que tu catch en el frontend funcione mejor
     return new Response(JSON.stringify(data), {
+      status: response.status, 
       headers: { 'Content-Type': 'application/json' }
     });
 
