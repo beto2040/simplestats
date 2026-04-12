@@ -4,15 +4,15 @@ export async function onRequest(context) {
   
   if (!API_KEY) {
     return new Response(JSON.stringify({ 
-      error: "Error: No se encontró la API_KEY en Cloudflare." 
+      error: "Configuración incompleta: No se encontró la API_KEY." 
     }), { status: 500 });
   }
 
   try {
     const body = await context.request.json();
     
-    // URL DEFINITIVA: v1beta y gemini-1.5-flash (sin el -latest)
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+    // MODELO ACTUALIZADO A ABRIL 2026: Gemini 3 Flash Preview
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`;
 
     const response = await fetch(url, {
       method: 'POST',
@@ -32,7 +32,7 @@ export async function onRequest(context) {
 
   } catch (error) {
     return new Response(JSON.stringify({ 
-      error: "Error de servidor", 
+      error: "Error de conexión con Gemini 3", 
       details: error.message 
     }), { status: 500 });
   }
