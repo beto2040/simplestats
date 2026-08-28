@@ -1,0 +1,42 @@
+2026-08-28 00:07:02,794 - INFO - Buscando dentistas en Monterrey...
+2026-08-28 00:07:04,301 - INFO - Se obtuvieron 20 lugares. Total acumulado: 20
+2026-08-28 00:07:04,302 - INFO - Esperando 2 segundos para acceder a la siguiente página de resultados...
+2026-08-28 00:07:07,020 - INFO - Se obtuvieron 0 lugares. Total acumulado: 20
+2026-08-28 00:07:07,020 - INFO - Consultando detalles para verificar sitios web...
+2026-08-28 00:07:07,853 - INFO - [+] Web encontrada: Dentista Monterrey | BMD
+2026-08-28 00:07:09,279 - INFO - [+] Web encontrada: Dra. Tonanzin dentista
+2026-08-28 00:07:10,613 - INFO - [+] Web encontrada: Central Dental
+2026-08-28 00:07:11,826 - INFO - [+] Web encontrada: Dentistas Teran Monterrey
+2026-08-28 00:07:13,377 - INFO - [+] Web encontrada: Clínica Dental DENTALUMEX
+2026-08-28 00:07:15,710 - INFO - [+] Web encontrada: Dentista en Monterrey | MAAS Dentistas
+2026-08-28 00:07:17,385 - INFO - [+] Web encontrada: SG DENTAL - Odontología Familiar
+2026-08-28 00:07:18,415 - INFO - [+] Web encontrada: RegioDental Fundidora
+2026-08-28 00:07:19,631 - INFO - [+] Web encontrada: Centro Odontológico Dr. Antonio Sánchez R
+2026-08-28 00:07:20,865 - INFO - [+] Web encontrada: Zental Odontología - Cumbres - Clínica Dental Monterrey
+2026-08-28 00:07:21,892 - INFO - [+] Web encontrada: Dentista en Monterrey - Kobe Dental
+2026-08-28 00:07:23,203 - INFO - [+] Web encontrada: Dental Smile Clinic
+2026-08-28 00:07:25,730 - INFO - [+] Web encontrada: Dra. Ely Juliana Dentista Monterrey
+2026-08-28 00:07:28,024 - INFO - [+] Web encontrada: Zental Odontología - Sertoma - Clínica Dental Monterrey
+2026-08-28 00:07:29,391 - INFO - [+] Web encontrada: Obispado Dental Clinic
+2026-08-28 00:07:30,684 - INFO - [+] Web encontrada: Dentista en Mitras Centro, Monterrey- Dental Diagnostic
+2026-08-28 00:07:32,209 - INFO - [+] Web encontrada: Amethyst l Dental Aesthetics Monterrey
+2026-08-28 00:07:33,314 - INFO - [+] Web encontrada: Regio Dental
+2026-08-28 00:07:33,815 - INFO - Extracción de detalles completada. 18 registros con sitio web.
+2026-08-28 00:07:33,816 - INFO - Extrayendo emails de los primeros 15 sitios web...
+2026-08-28 00:07:42,391 - INFO - [1/15] Dentista Monterrey | BMD -> No encontrado
+2026-08-28 00:07:51,201 - INFO - [2/15] Dra. Tonanzin dentista -> No encontrado
+2026-08-28 00:07:58,022 - INFO - [3/15] Central Dental -> No encontrado
+2026-08-28 00:08:12,938 - INFO - [4/15] Dentistas Teran Monterrey -> citas@dentistasteran.com
+2026-08-28 00:08:21,994 - INFO - [5/15] Clínica Dental DENTALUMEX -> No encontrado
+2026-08-28 00:08:27,364 - INFO - [6/15] Dentista en Monterrey | MAAS Dentistas -> maasdentistas@gmail.com
+2026-08-28 00:08:34,207 - INFO - [7/15] SG DENTAL - Odontología Familiar -> No encontrado
+2026-08-28 00:08:40,365 - INFO - [8/15] RegioDental Fundidora -> lizdiosdado@regiodental.com
+2026-08-28 00:08:48,362 - INFO - [9/15] Centro Odontológico Dr. Antonio Sánchez R -> No encontrado
+2026-08-28 00:08:53,110 - INFO - [10/15] Zental Odontología - Cumbres - Clínica Dental Monterrey -> zentalmx@gmail.com
+2026-08-28 00:08:57,277 - INFO - [11/15] Dentista en Monterrey - Kobe Dental -> No encontrado
+2026-08-28 00:09:04,645 - INFO - [12/15] Dental Smile Clinic -> No encontrado
+2026-08-28 00:09:10,707 - INFO - [13/15] Dra. Ely Juliana Dentista Monterrey -> No encontrado
+2026-08-28 00:09:24,464 - INFO - [14/15] Zental Odontología - Sertoma - Clínica Dental Monterrey -> zentalmx@gmail.com
+2026-08-28 00:09:28,458 - WARNING - No se pudo escanear https://obispadodentalclinic.com/. Motivo: HTTPSConnectionPool(host='obispadodentalclinic.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='obispadodentalclinic.com', port=443): Failed to resolve 'obispadodentalclinic.com' ([Errno 11001] getaddrinfo failed)"))
+2026-08-28 00:09:28,459 - INFO - [15/15] Obispado Dental Clinic -> No encontrado
+2026-08-28 00:09:28,506 - INFO - Proceso finalizado. CSV generado: base_freemium_paginada.csv
